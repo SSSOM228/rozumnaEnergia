@@ -344,14 +344,11 @@ export function getTankDeltaQ(
  * Оновлення температури води в баку
  * @param tCurrent поточна температура (°C)
  * @param deltaQ зміна теплоти (кДж або Дж — залежно від моделі)
- * @param cp теплоємність води (кДж/(кг·°C))
  * @param volume об'єм бака (м³)
- * @param rho густина води (кг/м³)
  */
 export function updateTankTemperature(
     tCurrent: number,
     deltaQ: number,
-    cp: number,
     volume: number
 ): number {
     return tCurrent + deltaQ / (CP_WATER * volume);
